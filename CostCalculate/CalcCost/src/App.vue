@@ -1,5 +1,6 @@
 <template>
   <div class="mainDiv">
+      Write Summ: 
     <input id="sum" type="number" min="1" max="4000" placeholder="Type a summ" v-model="credit" ><br>
           Select months: 
           <select nrid="months" name="" id="" v-model="months">
@@ -15,14 +16,15 @@
               <option value="10">10</option>
               <option value="11">11</option>
               <option value="12">12</option>
+
           </select> <br>
           <span v-show="false"> {{ CalcSumForPay(credit,months) }} </span>
           
           <table >
               <tr >
-                  <td>Nr. | </td>
-                  <td>Month's cost | </td>
-                  <td>Remaining </td>
+                  <td>Nr.</td>
+                  <td>Month's cost</td>
+                  <td>Remaining</td>
               </tr>
               <tr v-for="nr in +months" :key="nr">
                   <td>{{nr}}  </td>
@@ -64,5 +66,24 @@
 </script>
 
 <style>
-
+table{
+    border: 1px solid brown;
+    border-radius: 7px ;
+    margin-top: 10px;
+    font-size: 20px;
+    width: 100%;
+}
+td{
+    border: 2px solid green;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px ;
+    color: rebeccapurple;
+}
+td:hover{
+    background-color: bisque;
+}
+body{
+    background-color: cornsilk;
+}
 </style>
